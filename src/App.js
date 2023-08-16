@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="text-3xl font-bold underline">
-        Marico el que lo lea!
+        Testing to see concurrent tasks being performed in code.
       </h1>
     </div>
   );
