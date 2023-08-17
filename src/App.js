@@ -1,19 +1,22 @@
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { TitleHeader } from './components/TitleHeader/TitleHeader';
 
-function App() {
+
+export const App = () => {
+
   return (
-    <div className="App">
-      <h2 className="text-3xl font-bold underline">
-        Testing to see concurrent tasks being performed in code.
-      </h2>
-      <h1 className="text-3xl font-bold underline">
-        Testing to see concurrent tasks being performed in code.
-      </h1>
-      <h1 className="text-3xl font-bold underline">
-        Testing to see if changes to same files work!
-      </h1>
-    </div>
+    <HashRouter>
+      <div className='h-screen w-screen bg-gradient-to-tr rounded-lg from-blue-950 via-emerald-600 to-blue-950'>
+        <TitleHeader></TitleHeader>
+        <Routes>
+          <Route path='/'>
+          </Route>
+        </Routes>
+      </div>
+    </HashRouter>
   );
+
 }
 
 export default App;
