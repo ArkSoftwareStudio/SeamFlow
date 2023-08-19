@@ -7,6 +7,7 @@ function createWindow() {
     height: 800,
     transparent: true,
     frame: !isDev,
+    resizable: false,
     webPreferences: {
       devTools: isDev,
       nodeIntegration: false,
