@@ -5,7 +5,7 @@ export const Login = () => {
 
     return (
         <div className="h-screen w-screen flex justify-center p-10 ">
-            <div className='h-full flex align-center flex-col w-1/3 min-w-fit max-w- p-5 rounded-lg bg-slate-900/20'>
+            <div className='h-full flex align-center flex-col w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-2/7 p-5 rounded-lg bg-slate-900/20'>
                 <div className='h-[20%] mb-8 flex justify-center rounded-lg'>
                     <div className="rounded-lg h-32 w-32 bg-white/20"></div>
                 </div>
@@ -14,7 +14,7 @@ export const Login = () => {
                     <div className="relative mt-8">
                         <label
                             htmlFor="username"
-                            className="absolute rounded-lg bg-slate-100/90 pr-2 pl-2 -top-2 left-2 inline-block bg-transparent px-1 text-sm font-medium text-black"
+                            className="absolute rounded-lg bg-white/80 pr-2 pl-2 -top-2 left-2 inline-block bg-transparent px-1 text-sm font-medium text-black"
                         >
                             Username
                         </label>
@@ -29,7 +29,7 @@ export const Login = () => {
                     <div className="relative mt-8">
                         <label
                             htmlFor="password"
-                            className="absolute rounded-lg bg-slate-100/90 pr-2 pl-2 -top-2 left-2 inline-block bg-transparent px-1 text-sm font-medium text-black"
+                            className="absolute rounded-lg bg-white/80 pr-2 pl-2 -top-2 left-2 inline-block bg-transparent px-1 text-sm font-medium text-black"
                         >
                             Password
                         </label>

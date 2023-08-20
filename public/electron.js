@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const isDev = require("electron-is-dev");
 function createWindow() {
@@ -7,7 +7,7 @@ function createWindow() {
     height: 800,
     transparent: true,
     frame: !isDev,
-    resizable: false,
+    resizable: true,
     webPreferences: {
       devTools: isDev,
       nodeIntegration: false,
@@ -26,6 +26,15 @@ function createWindow() {
   if (isDev) {
     mainWindow.webContents.openDevTools({ mode: 'detach' });
   }
+
+  ipcMain.on('app', (e, args) => {
+    if(args === 'close'){
+      mainWindow.close();
+    }
+    if(args === 'minimize'){
+      mainWindow.minimize();
+    }
+  })
 }
 
 app.whenReady().then(() => {
