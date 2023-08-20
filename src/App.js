@@ -1,16 +1,17 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
 import { TitleHeader } from './components/TitleHeader/TitleHeader';
+import { Login } from './components/LoginPage/Login';
 
 
 export const App = () => {
 
   return (
     <HashRouter>
-      <div className='h-screen w-screen bg-gradient-to-tr rounded-lg from-blue-950 via-emerald-600 to-blue-950'>
+      <div className='h-full static w-full bg-gradient-to-tr rounded-lg from-blue-950 via-emerald-600 to-blue-950'>
         <TitleHeader></TitleHeader>
         <Routes>
-          <Route path='/'>
+          <Route path='/' element={<Login></Login>}>
+            
           </Route>
         </Routes>
       </div>
