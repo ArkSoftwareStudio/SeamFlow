@@ -11,6 +11,9 @@
 # Ignore built output from the production build process
 /build
 
+# Ignore API Keys
+.env
+
 # Ignore macOS-specific file metadata
 .DS_Store
 

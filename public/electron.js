@@ -1,6 +1,9 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
+const url = require('url')
 const isDev = require("electron-is-dev");
+require('dotenv').config();
+
 function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 1400,
@@ -21,17 +24,23 @@ function createWindow() {
   mainWindow.loadURL(
     isDev
       ? "http://localhost:3000"
-      : `file://${path.join(__dirname, "../build/index.html")}`
+      : url.format({
+        pathname: path.join(__dirname, 'index.html'),
+        protocol: 'file:',
+        slashes: true
+      })
   );
   if (isDev) {
     mainWindow.webContents.openDevTools({ mode: 'detach' });
   }
 
+
+
   ipcMain.on('app', (e, args) => {
-    if(args === 'close'){
+    if (args === 'close') {
       mainWindow.close();
     }
-    if(args === 'minimize'){
+    if (args === 'minimize') {
       mainWindow.minimize();
     }
   })
